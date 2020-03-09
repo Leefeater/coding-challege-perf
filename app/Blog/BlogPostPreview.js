@@ -52,7 +52,6 @@ export const BlogPostPreview = ({id, fetchBlogPost, index, siteId, activeId, upd
             fetchBlogPost(id).then( res => {
                 updateBlogData(res);
             });
-            console.log(blogData, 'blogData')
 
     const slideUp = () => {
             if(slider) slider.style.bottom = "0"

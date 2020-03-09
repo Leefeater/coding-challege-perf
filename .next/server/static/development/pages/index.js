@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -116,48 +116,27 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const PostWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-    border:1px solid #f1f1f1;
-    border-radius:3px;
-    position:relative;
-    background-image:url(https://convertlyimguploadeast.s3.amazonaws.com/${({
+const PostWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "BlogPostPreview__PostWrapper",
+  componentId: "q0b8oa-0"
+})(["border:1px solid #f1f1f1;border-radius:3px;position:relative;background-image:url(https://convertlyimguploadeast.s3.amazonaws.com/", "/", ");background-size:cover;overflow:hidden;"], ({
   siteId
-}) => siteId}/${({
+}) => siteId, ({
   img
-}) => img});
-    background-size: cover;
-    overflow:hidden;
-`;
-const ContentWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-    position:absolute;
-    bottom:-100%;
-    transition:all 1s ease;
-    width:100%;
-    background:#fff;
-`;
-const ContentModal = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-
-    height:80vh;
-    width:80vw;
-    position:fixed;
-    transition:all 1s ease;
-    background:#fff;
-    border:1px solid #f1f1f1;
-    border-radius:5px;
-    z-index:1;
-    ${({
+}) => img);
+const ContentWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "BlogPostPreview__ContentWrapper",
+  componentId: "q0b8oa-1"
+})(["position:absolute;bottom:-100%;transition:all 1s ease;width:100%;background:#fff;"]);
+const ContentModal = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "BlogPostPreview__ContentModal",
+  componentId: "q0b8oa-2"
+})(["height:80vh;width:80vw;position:fixed;transition:all 1s ease;background:#fff;border:1px solid #f1f1f1;border-radius:5px;z-index:1;", " & span{position:absolute;top:5px;right:5px;cursor:pointer;}"], ({
   active
 }) => active ? `left:10vw;
     top:10vh;` : `left:-100vw;
     top:-100vh;
-    `}
-    & span {
-        position:absolute;
-        top:5px;
-        right:5px;
-        cursor:pointer;
-    }
-`;
+    `);
 const BlogPostPreview = ({
   id,
   fetchBlogPost,
@@ -174,7 +153,6 @@ const BlogPostPreview = ({
   fetchBlogPost(id).then(res => {
     updateBlogData(res);
   });
-  console.log(blogData, 'blogData');
 
   const slideUp = () => {
     if (slider) slider.style.bottom = "0";
@@ -191,14 +169,14 @@ const BlogPostPreview = ({
     img: blogData.featureImage ? blogData.featureImage.src : "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 66
     },
     __self: undefined
   }, (blogData === null || blogData === void 0 ? void 0 : blogData.itemType) ? __jsx(ContentWrapper, {
     ref: el => slider = el,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 72
     },
     __self: undefined
   }, __jsx(_Content__WEBPACK_IMPORTED_MODULE_2__["Content"], {
@@ -209,20 +187,20 @@ const BlogPostPreview = ({
     shortDescription: blogData.shortDescription,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 73
     },
     __self: undefined
   })) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 76
     },
     __self: undefined
   }, "Loading...."), __jsx(ContentModal, {
     active: activeId === id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 78
     },
     __self: undefined
   }, __jsx("span", {
@@ -231,7 +209,7 @@ const BlogPostPreview = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 79
     },
     __self: undefined
   }, "X"), react_html_parser__WEBPACK_IMPORTED_MODULE_3___default()(blogData.postContent)));
@@ -257,19 +235,10 @@ var _jsxFileName = "/Users/nhargitt/Documents/convertly/janky2/app/Blog/Content.
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-    padding:10px;
-    & h1 {
-      font-size:25px;
-      margin:0;
-    }
-    & small {
-      font-size:8px;
-    }
-    & p {
-    font-size:12px;
-    }
-`;
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Content__Wrapper",
+  componentId: "sc-1qjm4df-0"
+})(["padding:10px;& h1{font-size:25px;margin:0;}& small{font-size:8px;}& p{font-size:12px;}"]);
 const Content = props => {
   return __jsx(Wrapper, {
     __source: {
@@ -343,14 +312,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const BlogWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div`
-    display: grid;
-    grid-auto-rows: 400px;
-    grid-template-columns: repeat(3,30%);
-    grid-gap: 40px 40px;
-    width: 100vw;
-    padding: 40px;
-`;
+const BlogWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
+  displayName: "Blog__BlogWrapper",
+  componentId: "cpre2j-0"
+})(["display:grid;grid-auto-rows:400px;grid-template-columns:repeat(3,30%);grid-gap:40px 40px;width:100vw;padding:40px;"]);
 class Blog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
@@ -372,7 +337,6 @@ class Blog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
   async fetchBlogPost(id) {
-    if (this.counter > 0) return false;
     return await Object(_utils_graph__WEBPACK_IMPORTED_MODULE_1__["getGraphPost"])(id);
   }
 
@@ -390,7 +354,7 @@ class Blog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     return __jsx(BlogWrapper, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 59
       },
       __self: this
     }, this.state.blogPostsIds.map((id, index) => {
@@ -403,7 +367,7 @@ class Blog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         fetchBlogPost: this.fetchBlogPost,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 62
         },
         __self: this
       });
@@ -418,34 +382,16 @@ class Blog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 /*!****************************!*\
   !*** ./app/utils/graph.js ***!
   \****************************/
-/*! exports provided: graph, getAllGraphPosts, getGraphPost */
+/*! exports provided: getAllGraphPosts, getGraphPost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "graph", function() { return graph; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllGraphPosts", function() { return getAllGraphPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getGraphPost", function() { return getGraphPost; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
-async function graph({
-  query,
-  variables
-}) {
-  variables = variables ? variables : {};
-  const data = {
-    query: query,
-    variables: variables
-  };
-  const params = {
-    url: "https://u8zp940p78.execute-api.us-east-1.amazonaws.com/development/graphiql?variables=%7B%22blogQueryInput%22%3A%20%7B%0A%20%20%22siteId%22%3A%20%22a402fab0-dfc9-11e9-815b-41f22eba7175%22%0A%7D%0A%7D&query=%0Aquery%20(%24blogQueryInput%3A%20blogQueryInput!)%20%7B%0A%20%20BlogPosts(blogQueryInput%3A%20%24blogQueryInput)%20%0A%7D%0A",
-    method: "post",
-    data
-  };
-  const response = await axios__WEBPACK_IMPORTED_MODULE_0___default()(params);
-  return response.data;
-}
 const getAllGraphPosts = async () => {
   const params = {
     url: "api/getAllBlogPosts",
@@ -498,7 +444,7 @@ function page() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

@@ -40,7 +40,6 @@ export class Blog extends React.Component {
     }
 
     async fetchBlogPost(id) {
-        if(this.counter > 0) return false
 
         return await getGraphPost(id)
     }
