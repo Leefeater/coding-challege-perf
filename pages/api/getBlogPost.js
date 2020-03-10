@@ -1,5 +1,4 @@
 const data = require('../../data');
-import verboselog from 'verboselog'
 
 export default (req, res) => {
 

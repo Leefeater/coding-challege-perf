@@ -24,7 +24,8 @@ export class Blog extends React.Component {
         this.state = {
             blogPostsIds: [],
             siteId: "a402fab0-dfc9-11e9-815b-41f22eba7175",
-            activeId: false
+            activeId: false,
+            blogPosts: {}
         }
 
         this.fetchBlogPost = this.fetchBlogPost.bind(this);
@@ -39,9 +40,22 @@ export class Blog extends React.Component {
 
     }
 
+
+
     async fetchBlogPost(id) {
 
-        return await getGraphPost(id)
+
+
+        if(this.state.blogPosts[id]) return this.state.blogPosts[id]
+
+        const blogPost = await getGraphPost(id)
+        this.setState((prevState) => {
+                let posts = {...prevState.blogPosts}
+                posts[id] = blogPost;
+            }
+         );
+        this.counter ++;
+        return blogPost
     }
 
     updateActiveId(id) {

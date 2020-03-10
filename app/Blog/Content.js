@@ -11,8 +11,18 @@ const Wrapper = styled.div`
       font-size:8px;
     }
     & p {
-    font-size:12px;
+    font-size:14px;
     }
+    & button {
+        padding:10px 30px;
+        cursor:pointer;
+        background:#44A48E;
+        color:#efefef;
+        font-size:14px;
+        border:none;
+    }
+    
+    
 `;
 
 export const Content = (props) => {
@@ -21,13 +31,13 @@ export const Content = (props) => {
         <Wrapper>
             <div>
             <h1>{props.title}</h1>
-                <small>By {props.author && props.author.name} - </small>
+                <small>By {props.author && props.author}</small>
             <p>{props.shortDescription}</p>
             </div>
             <div>
                 <button onClick={ () => {
                     props.updateActiveId( props.id )
-                } }>View More</button>
+                } }>Read Post</button>
             </div>
         </Wrapper>
     )

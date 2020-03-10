@@ -7,7 +7,7 @@ const PostWrapper = styled.div`
     border:1px solid #f1f1f1;
     border-radius:3px;
     position:relative;
-    background-image:url(https://convertlyimguploadeast.s3.amazonaws.com/${ ({siteId}) => siteId}/${({img}) => img});
+    background-image:url(${({img}) => img});
     background-size: cover;
     overflow:hidden;
 `;
@@ -34,6 +34,8 @@ const ContentModal = styled.div`
     top:10vh;` :
     `left:-100vw;
     top:-100vh;
+    
+    
     `
 }
     & span {

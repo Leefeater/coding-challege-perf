@@ -119,9 +119,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const PostWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "BlogPostPreview__PostWrapper",
   componentId: "q0b8oa-0"
-})(["border:1px solid #f1f1f1;border-radius:3px;position:relative;background-image:url(https://convertlyimguploadeast.s3.amazonaws.com/", "/", ");background-size:cover;overflow:hidden;"], ({
-  siteId
-}) => siteId, ({
+})(["border:1px solid #f1f1f1;border-radius:3px;position:relative;background-image:url(", ");background-size:cover;overflow:hidden;"], ({
   img
 }) => img);
 const ContentWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
@@ -136,6 +134,8 @@ const ContentModal = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.di
 }) => active ? `left:10vw;
     top:10vh;` : `left:-100vw;
     top:-100vh;
+    
+    
     `);
 const BlogPostPreview = ({
   id,
@@ -169,14 +169,14 @@ const BlogPostPreview = ({
     img: blogData.featureImage ? blogData.featureImage.src : "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 68
     },
     __self: undefined
   }, (blogData === null || blogData === void 0 ? void 0 : blogData.itemType) ? __jsx(ContentWrapper, {
     ref: el => slider = el,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 74
     },
     __self: undefined
   }, __jsx(_Content__WEBPACK_IMPORTED_MODULE_2__["Content"], {
@@ -187,20 +187,20 @@ const BlogPostPreview = ({
     shortDescription: blogData.shortDescription,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 75
     },
     __self: undefined
   })) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 78
     },
     __self: undefined
   }, "Loading...."), __jsx(ContentModal, {
     active: activeId === id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 80
     },
     __self: undefined
   }, __jsx("span", {
@@ -209,7 +209,7 @@ const BlogPostPreview = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 81
     },
     __self: undefined
   }, "X"), react_html_parser__WEBPACK_IMPORTED_MODULE_3___default()(blogData.postContent)));
@@ -238,42 +238,42 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "Content__Wrapper",
   componentId: "sc-1qjm4df-0"
-})(["padding:10px;& h1{font-size:25px;margin:0;}& small{font-size:8px;}& p{font-size:12px;}"]);
+})(["padding:10px;& h1{font-size:25px;margin:0;}& small{font-size:8px;}& p{font-size:14px;}& button{padding:10px 30px;cursor:pointer;background:#44A48E;color:#efefef;font-size:14px;border:none;}"]);
 const Content = props => {
   return __jsx(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 31
     },
     __self: undefined
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 32
     },
     __self: undefined
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 33
     },
     __self: undefined
   }, props.title), __jsx("small", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 34
     },
     __self: undefined
-  }, "By ", props.author && props.author.name, " - "), __jsx("p", {
+  }, "By ", props.author && props.author), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 35
     },
     __self: undefined
   }, props.shortDescription)), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 37
     },
     __self: undefined
   }, __jsx("button", {
@@ -282,10 +282,10 @@ const Content = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 38
     },
     __self: undefined
-  }, "View More")));
+  }, "Read Post")));
 };
 
 /***/ }),
@@ -309,6 +309,13 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/nhargitt/Documents/convertly/janky2/app/Blog/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -322,7 +329,8 @@ class Blog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     this.state = {
       blogPostsIds: [],
       siteId: "a402fab0-dfc9-11e9-815b-41f22eba7175",
-      activeId: false
+      activeId: false,
+      blogPosts: {}
     };
     this.fetchBlogPost = this.fetchBlogPost.bind(this);
     this.updateActiveId = this.updateActiveId.bind(this);
@@ -337,7 +345,15 @@ class Blog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
   async fetchBlogPost(id) {
-    return await Object(_utils_graph__WEBPACK_IMPORTED_MODULE_1__["getGraphPost"])(id);
+    if (this.state.blogPosts[id]) return this.state.blogPosts[id];
+    const blogPost = await Object(_utils_graph__WEBPACK_IMPORTED_MODULE_1__["getGraphPost"])(id);
+    this.setState(prevState => {
+      let posts = _objectSpread({}, prevState.blogPosts);
+
+      posts[id] = blogPost;
+    });
+    this.counter++;
+    return blogPost;
   }
 
   updateActiveId(id) {
@@ -354,7 +370,7 @@ class Blog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     return __jsx(BlogWrapper, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 73
       },
       __self: this
     }, this.state.blogPostsIds.map((id, index) => {
@@ -367,7 +383,7 @@ class Blog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         fetchBlogPost: this.fetchBlogPost,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 76
         },
         __self: this
       });
@@ -436,7 +452,7 @@ function page() {
   return __jsx(_app_Blog__WEBPACK_IMPORTED_MODULE_1__["Blog"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 6
     },
     __self: this
   });

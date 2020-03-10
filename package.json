@@ -4,7 +4,7 @@
   "description": "",
   "main": "blog-post-data.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node refresh-blog-posts.js; next",
     "build": "next build",
     "start": "next start"
   },
