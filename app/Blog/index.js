@@ -44,18 +44,7 @@ export class Blog extends React.Component {
 
     async fetchBlogPost(id) {
 
-
-
-        if(this.state.blogPosts[id]) return this.state.blogPosts[id]
-
-        const blogPost = await getGraphPost(id)
-        this.setState((prevState) => {
-                let posts = {...prevState.blogPosts}
-                posts[id] = blogPost;
-            }
-         );
-        this.counter ++;
-        return blogPost
+        return await getGraphPost(id)
     }
 
     updateActiveId(id) {
